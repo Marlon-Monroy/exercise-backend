@@ -16,12 +16,12 @@ const db = require('./dbConfig');
 
     router.get('/token',(req, res)=>{
         
-        
     });
     
     router.get('/callback', (req,res)=>{
        const code = req.query.code;
        console.log(code); 
+       res.send(code);
       
     });
 
