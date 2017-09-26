@@ -21,7 +21,7 @@ const db = require('./dbConfig');
     router.get('/callback', (req,res)=>{
        const code = req.query.code;
        console.log(code); 
-       res.send(code);
+       res.redirect('/');
       
     });
 
