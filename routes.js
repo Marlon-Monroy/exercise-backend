@@ -3,13 +3,17 @@ var router = express.Router();
 const  oauth = require('./outhConfig');
 
     router.get('/',(req, res)=> {
-        res.send({"homepage":"Enpoint"});
+        res.send(4003,{"homepage":"Enpoint"});
     });
     
     router.get('/auth',(req,res)=> {
         var uri = oauth.code.getUri();
           res.redirect(uri);
     });
+    router.get('/token',(req, res)=>{
+        const params = req.params;
+        
+        });
     
     router.get('/callback', (req,res)=>{
         oauth.code.getToken(req.originalUrl) 
@@ -17,14 +21,16 @@ const  oauth = require('./outhConfig');
         
           user.refresh()
           .then(function(updedUser){
-            console.log("refreshing");
-              return res.send({"access_token":user.accessToken});
+            console.log(user.accessToken);
+            return res.send('Authorized');
+           
           })
           .catch(function(err){
               console.log(err);
           });
+          console.log(user.accessToken);
+          return res.send('Authorized');
           
-          return res.send({"access_token":user.accessToken});
       })
       .catch(function(err){
           console.log(err);
