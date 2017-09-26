@@ -18,9 +18,6 @@
   },
 
   "author": "Marlon Monroy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Marlon-Monroy/Assigment/issues"
-  },
-  "homepage": "https://github.com/Marlon-Monroy/Assigment#readme"
+  "license": "ISC"
+  
 }
