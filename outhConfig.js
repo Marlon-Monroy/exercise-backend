@@ -1,5 +1,5 @@
 const ClientOAuth2 = require('client-oauth2');
-const  port = process.env.port;
+const  port = process.env.port || 3000;
 const nprAuth = new ClientOAuth2({
     clientId:'nprone_trial_QpygBBVs2ywc',
     clientSecret:'zsQ9mXCPMEFTCdTbybAmHOEEXDhdEINGj3YoMEvr',
