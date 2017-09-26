@@ -21,7 +21,10 @@ const db = require('./dbConfig');
     router.get('/callback', (req,res)=>{
        const code = req.query.code;
        console.log(code); 
-       res.redirect('/');
+       if (code !== "" ) {
+           res.send('authorized');
+     
+       }
       
     });
 
