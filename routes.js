@@ -1,41 +1,28 @@
 const express = require('express');
-var router = express.Router();
+const router = express.Router();
 const  oauth = require('./outhConfig');
+const db = require('./dbConfig');
 
     router.get('/',(req, res)=> {
-        res.send(403,{"homepage":"Enpoint"});
+        
+        res.send({"homepage":"unhandle route"});
     });
     
+
     router.get('/auth',(req,res)=> {
-        var uri = oauth.code.getUri();
-          res.redirect(uri);
+        console.log(oauth.uri);
+          res.redirect(oauth.uri);
     });
+
     router.get('/token',(req, res)=>{
-        const params = req.params;
         
-        });
+        
+    });
     
     router.get('/callback', (req,res)=>{
-        oauth.code.getToken(req.originalUrl) 
-      .then(function (user){
-        
-          user.refresh()
-          .then(function(updedUser){
-            console.log(user.accessToken);
-            return res.send('Authorized');
-           
-          })
-          .catch(function(err){
-              console.log(err);
-          });
-          console.log(user.accessToken);
-          return res.send('Authorized');
-          
-      })
-      .catch(function(err){
-          console.log(err);
-      });
-    
+       const code = req.query.code;
+       console.log(code); 
+      
     });
 
 module.exports = router;
