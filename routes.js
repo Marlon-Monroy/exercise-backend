@@ -3,7 +3,7 @@ var router = express.Router();
 const  oauth = require('./outhConfig');
 
     router.get('/',(req, res)=> {
-        res.send(4003,{"homepage":"Enpoint"});
+        res.send(403,{"homepage":"Enpoint"});
     });
     
     router.get('/auth',(req,res)=> {
