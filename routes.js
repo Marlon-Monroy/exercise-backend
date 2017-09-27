@@ -23,7 +23,7 @@ const db = require('./dbConfig');
        console.log(code); 
        if (code !== "" ) {
            //res.send('authorized');
-           res.redirect("callback://"); 
+           res.redirect("callback://"+code); 
        }
       
     });
