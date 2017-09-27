@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
-const TokenSchema  = new Schema({
+mongoose.Promise = global.Promise;
+const TokenSchema  = mongoose.Schema({
     token: {
         type:String,
     },
@@ -9,4 +9,4 @@ const TokenSchema  = new Schema({
     }
 });
 
-module.exports = mongoose.model('Token', TokenSchema);
+module.exports = mongoose.model('token', TokenSchema);

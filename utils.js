@@ -1,8 +1,6 @@
 module.exports = {
-    //accessTokenUri:'https://api.npr.org/authorization/v2/token',
-    //authorizationUri:'https://api.npr.org/authorization/v2/authorize'
+
     callbackURL: {
-        
         dev:"http://localhost:8080/callback",
         prod:"https://npr-client.herokuapp.com/callback"
     },
