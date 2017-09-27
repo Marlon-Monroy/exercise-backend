@@ -22,7 +22,7 @@ const db = require('./dbConfig');
        const code = req.query.code;
        console.log(code); 
        if (code !== "" ) {
-           res.send('authorized');
+           //res.send('authorized');
            res.redirect("callback://"); 
        }
       
